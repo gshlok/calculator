@@ -1,9 +1,13 @@
 let d = "";
-
-buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        d += button.innerText;
-        document.getElementsByClassName("display").innerHTML = d;
+        if(button.innerText == "DEL") d = d.slice(0, -1);
+        if(button.innerText == "AC") {d = "";}
+        else d += button.innerText;
+
+
+        if(d == "")  document.querySelector(".display").innerText = "0";
+        else document.querySelector(".display").innerText = d;
     })
 })
