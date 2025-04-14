@@ -5,6 +5,7 @@ function calc(str) {
     for(var i = 0 ; i < str.length ; i++) {
         if(str[i] == "×") str = str.replace("×", "*");
         if(str[i] == "÷") str = str.replace("÷", "/");
+        if(str[i] == "%") str = str.replace("%", "/100*");
     }
     return eval(str).toString();
 }
